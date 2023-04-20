@@ -40,16 +40,18 @@ namespace revisao3api.Controllers
         }
 
         [HttpGet]
-        public string Get()
+        public IEnumerable<Evento>  Get()
         {
-            return "Verbo Get";
+            return _evento;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IEnumerable<Evento> GetById(int id)
         {
             return _evento.Where(e => e.EventoId == id);
         }
+
+
 
         }
     }
